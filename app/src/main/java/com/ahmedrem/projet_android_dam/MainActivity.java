@@ -1,6 +1,8 @@
 package com.ahmedrem.projet_android_dam;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        username = findViewById(R.id.username);
+        username = findViewById(R.id.username); //get username
         password = findViewById(R.id.password);
         login = findViewById(R.id.login);
 
@@ -40,12 +42,22 @@ public class MainActivity extends AppCompatActivity {
                 usr = username.getText().toString();
                 psw = password.getText().toString();
 
-                if(username.equals("Mohamed") && psw.equals("123")){
+                if(username.equals("haitam") && psw.equals("123")){
                     Snackbar.make(view,"Login Successfully",0).show();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent i = new Intent(MainActivity.this,DashboardActivity.class);
+                            i.putExtra("username","haitam");
+                            startActivity(i);
+                        }
+                    },2000);
+
 
                 }
                 else {
                     Snackbar.make(view,"Error in Login ", 0).show();
+
                 }
             }
         });

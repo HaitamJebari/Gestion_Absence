@@ -1,5 +1,4 @@
-Impossible de créer, modifier ou importer … Espace de stockage insuffisant. Profitez de 100 Go de stockage pour 19,00 MAD 4,75 MAD/mois pendant 3 mois.
-    <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -20,6 +19,7 @@ Impossible de créer, modifier ou importer … Espace de stockage insuffisant. P
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/white"
             android:layout_margin="10dp"
             android:paddingTop="50dp">
 
@@ -28,9 +28,9 @@ Impossible de créer, modifier ou importer … Espace de stockage insuffisant. P
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/logo"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true">
+                android:layout_alignParentStart="true">
             </ImageView>
 
             <TextView
@@ -40,11 +40,10 @@ Impossible de créer, modifier ou importer … Espace de stockage insuffisant. P
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:textColor="@color/blue"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"/>
-
+                android:layout_marginEnd="20dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtusername"
@@ -55,6 +54,7 @@ Impossible de créer, modifier ou importer … Espace de stockage insuffisant. P
                 android:hint="Username"
                 app:endIconDrawable="@drawable/mail"
                 app:endIconMode="custom">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/username"
                     android:layout_width="match_parent"
@@ -69,6 +69,7 @@ Impossible de créer, modifier ou importer … Espace de stockage insuffisant. P
                 android:layout_marginTop="10dp"
                 android:hint="Password"
                 app:endIconMode="password_toggle">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
@@ -85,12 +86,8 @@ Impossible de créer, modifier ou importer … Espace de stockage insuffisant. P
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:cornerRadius="10dp"
-                android:backgroundTint="@color/blue"
-                app:icon="@drawable/check"/>
-
+                app:backgroundTint="@color/blue" />
         </RelativeLayout>
-
-
 
     </androidx.cardview.widget.CardView>
 
