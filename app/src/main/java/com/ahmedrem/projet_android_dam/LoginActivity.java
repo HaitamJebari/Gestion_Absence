@@ -3,6 +3,7 @@ package com.ahmedrem.projet_android_dam;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
@@ -15,9 +16,9 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
-    TextInputEditText username , password;
+    TextInputEditText username, password;
     MaterialButton login;
 
     @Override
@@ -31,35 +32,38 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        username = findViewById(R.id.username); //get username
+        username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         login = findViewById(R.id.login);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String usr,psw;
+                String usr, psw;
                 usr = username.getText().toString();
                 psw = password.getText().toString();
 
-                if(username.equals("haitam") && psw.equals("123")){
-                    Snackbar.make(view,"Login Successfully",0).show();
+                if ( usr.equals("haitam") && psw.equals("123") ) {
+                    Snackbar snk = Snackbar.make(view, "Login Successfully !", 0);
+                    snk.setBackgroundTint(getResources().getColor(R.color.green));
+                    snk.show();
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            Intent i = new Intent(MainActivity.this,DashboardActivity.class);
+                            Intent i = new Intent(LoginActivity.this,DashboardActivity.class);
                             i.putExtra("username","haitam");
                             startActivity(i);
                         }
-                    },2000);
-
-
+                    }, 2000);
                 }
                 else {
-                    Snackbar.make(view,"Error in Login ", 0).show();
-
+                    Snackbar snk = Snackbar.make(view, "Login Error !", 0);
+                    snk.setBackgroundTint(getResources().getColor(R.color.red));
+                    snk.show();
                 }
+
             }
         });
+
     }
 }
