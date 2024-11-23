@@ -25,7 +25,7 @@ import com.google.zxing.integration.android.IntentResult;
 public class DashboardActivity extends AppCompatActivity {
 
     RelativeLayout panel; //this
-    CardView card1;
+    CardView card1 , card2;
     TextView txtqr;
 
     @Override
@@ -43,6 +43,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         panel = findViewById(R.id.panel);
         card1 = findViewById(R.id.card1);
+        card2 = findViewById(R.id.card2);
         txtqr = findViewById(R.id.txtqr);
 
         new Handler().postDelayed(new Runnable() {
@@ -82,6 +83,13 @@ public class DashboardActivity extends AppCompatActivity {
                 integrator.setOrientationLocked(false);
                 integrator.setBeepEnabled(false);
                 integrator.initiateScan();
+            }
+        });
+        card1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DashboardActivity.this, GenerateActivity.class);
+                startActivity(i);
             }
         });
     }

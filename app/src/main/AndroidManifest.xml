@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera.any"/>
-    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PROJET_ANDROID_DAM"
         tools:targetApi="31">
+        <activity
+            android:name=".GenerateActivity"
+            android:exported="false" />
         <activity
             android:name=".DashboardActivity"
             android:exported="false" />
