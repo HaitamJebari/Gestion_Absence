@@ -18,6 +18,9 @@
         android:theme="@style/Theme.PROJET_ANDROID_DAM"
         tools:targetApi="31">
         <activity
+            android:name=".ScannActivity"
+            android:exported="false" />
+        <activity
             android:name=".GenerateActivity"
             android:exported="false" />
         <activity

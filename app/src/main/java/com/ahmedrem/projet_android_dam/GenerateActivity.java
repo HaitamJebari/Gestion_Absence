@@ -51,7 +51,7 @@ public class GenerateActivity extends AppCompatActivity {
                 data = data + txtformateur.getText().toString() + "|";
                 data = data + txtdate.getDayOfMonth() + "/" + txtdate.getMonth() + "/" + txtdate.getYear();
 try {
-    BitMatrix bitmx = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE, 300, 300);
+    BitMatrix bitmx = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE, 500, 500);
     Bitmap bmp = new BarcodeEncoder().createBitmap(bitmx);
     ImageView imgqr = new ImageView(GenerateActivity.this);
     imgqr.setImageBitmap(bmp);

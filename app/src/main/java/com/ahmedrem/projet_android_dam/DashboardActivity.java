@@ -77,15 +77,17 @@ public class DashboardActivity extends AppCompatActivity {
         card1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                IntentIntegrator integrator = new IntentIntegrator(DashboardActivity.this);
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
-                integrator.setBarcodeImageEnabled(true);
-                integrator.setOrientationLocked(false);
-                integrator.setBeepEnabled(false);
-                integrator.initiateScan();
+                  Intent i = new Intent(DashboardActivity.this, ScannActivity.class);
+                  startActivity(i);
+//                IntentIntegrator integrator = new IntentIntegrator(DashboardActivity.this);
+//                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
+//                integrator.setBarcodeImageEnabled(true);
+//                integrator.setOrientationLocked(false);
+//                integrator.setBeepEnabled(false);
+//                integrator.initiateScan();
             }
         });
-        card1.setOnClickListener(new View.OnClickListener() {
+        card2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(DashboardActivity.this, GenerateActivity.class);
@@ -95,17 +97,17 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        IntentResult resultat = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
-        if(resultat !=null){
-            String qrdata = resultat.getContents().toString();
-            if(qrdata!=null){
-                Snackbar snk = Snackbar.make(panel,qrdata,Snackbar.LENGTH_LONG);
-                snk.setBackgroundTint(getResources().getColor(R.color.blue));
-                snk.show();
-            }
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        IntentResult resultat = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
+//        if(resultat !=null){
+//            String qrdata = resultat.getContents().toString();
+//            if(qrdata!=null){
+//                Snackbar snk = Snackbar.make(panel,qrdata,Snackbar.LENGTH_LONG);
+//                snk.setBackgroundTint(getResources().getColor(R.color.blue));
+//                snk.show();
+//            }
+//        }
+//    }
 }
